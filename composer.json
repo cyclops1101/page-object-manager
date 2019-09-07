@@ -1,0 +1,30 @@
+{
+    "name": "cyclops1101/page-object",
+    "description": "A Laravel Nova resource tool.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cyclops1101\\PageObjectManager\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cyclops1101\\PageObjectManager\\PageObjectServiceProvider",
+                "Cyclops1101\\PageObjectManager\\PageServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
