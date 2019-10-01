@@ -25,7 +25,7 @@ class BlockResource extends StaticResource
      */
     public static function label()
     {
-        return config('page-object-manager.labels.options');
+        return config('page-object-manager.labels.blocks');
     }
 
     /**
@@ -35,7 +35,7 @@ class BlockResource extends StaticResource
      */
     public static function singularLabel()
     {
-        return config('page-object-manager.labels.option');
+        return config('page-object-manager.labels.block');
     }
 
     /**

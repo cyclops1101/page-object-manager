@@ -77,7 +77,7 @@ return [
     | implements the Cyclops1101\PageObjectManager\Sources\SourceInterface.
     |
     */
-    'default_source' => \Cyclops1101\PageObjectManager\Sources\Filesystem::class,
+    'default_source' => \Cyclops1101\PageObjectManager\Sources\Database::class,
 
     /*
     |--------------------------------------------------------------------------
