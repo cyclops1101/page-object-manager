@@ -29,7 +29,7 @@ php artisan make:template AboutUs
 
 Page and Block objects use any Nova Field you have installed.
 
-Load your page/block in your controller and then you have access to all the data you've stored on the object
+Load your page/block in your controller using the name you set in the Nova admin and then you have access to all the data you've stored on the object
 
 ```$xslt
 public function __invoke(Manager $page)
