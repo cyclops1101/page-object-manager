@@ -61,7 +61,6 @@ class CreateTemplate extends Command
             $this->files->put($path, $this->buildClass($name));
             $this->info('Created ' . $path);
         }
-//        $this->register();
     }
 
     public function getNameArgument()

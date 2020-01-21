@@ -12,7 +12,7 @@ Then register the Nova tool in `app/Providers/NovaServiceProvider.php`:
 public function tools()
 {
     return [
-        \Cyclops1101\PageObjectManager\PageObjectManagerTool::make(),
+        \Cyclops1101\PageObjectManager\PageObject::make(),
     ];
 }
 ```
