@@ -18,7 +18,7 @@ public function tools()
 ```
 Publish and run the migrations
 ```
-php artisan vendor:publish --provider="Cyclops1101\PageObjectManager\PageObjectServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Cyclops1101\PageObjectManager\PageServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
