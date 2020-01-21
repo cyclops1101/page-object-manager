@@ -66,11 +66,6 @@ class BlockResource extends StaticResource
                 $updated_at = $this->getDate('updated_at');
                 return $updated_at ? $updated_at->toDateTimeString() : null;
             })->format(config('page-object-manager.date_format'))->sortable(),
-
-            //TODO: add last updated by
-//            Text::make('Last Update By', function () {
-//                return $this->user ? $this->user->name : null;
-//            })
         ];
     }
 

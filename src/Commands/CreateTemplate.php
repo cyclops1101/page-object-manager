@@ -99,27 +99,4 @@ class CreateTemplate extends Command
     {
         return __DIR__ . '/../Stubs/Template.php';
     }
-
-    //TODO: figure out how to write to the config file
-//    public function register()
-//    {
-//        $page = $this->toHuman($this->argument('name'));
-//        $pages = config($this->configKey());
-//        $pages = array_merge($pages, [$page => "App\\Nova\\Template\\{$this->argument("name")}"]);
-//        $this->info(print_r($pages));
-//
-//        Config::write($this->configKey(), implode(",", $pages));
-//        $this->info(print_r(config($this->configKey())));
-//    }
-//
-//    public function configKey()
-//    {
-//        return "page-object-manager." . ($this->option('block') ? 'blocks' : 'pages');
-//    }
-//
-//    public function toHuman($string)
-//    {
-//        return trim(preg_replace('/(?!^)[A-Z]{2,}(?=[A-Z][a-z])|[A-Z][a-z]/', ' $0', $string));
-//    }
-
 }
