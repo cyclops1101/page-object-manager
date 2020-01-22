@@ -24,7 +24,7 @@ php artisan migrate
 
 In order to create a template run the following command
 ```
-php artisan make:template AboutUs
+php artisan make:template "About Us"
 ```
 
 Page and Block objects use any Nova Field you have installed.

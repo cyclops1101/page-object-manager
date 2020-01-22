@@ -5,6 +5,7 @@ namespace Cyclops1101\PageObjectManager\Commands;
 use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\DB;
 use Illuminate\Support\Facades\Config;
 
 class CreateTemplate extends Command
@@ -59,6 +60,9 @@ class CreateTemplate extends Command
             $this->info($path . ' template already exists');
         } else {
             $this->files->put($path, $this->buildClass($name));
+            DB::table('static_pages')->insert([
+                'name' => $name
+            ]);
             $this->info('Created ' . $path);
         }
     }
