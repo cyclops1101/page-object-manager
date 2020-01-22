@@ -99,7 +99,7 @@ class CreateTemplate extends Command
         if ($this->option('block')) {
             $stub = str_replace("'page'", "'block'", $stub);
         }
-        return str_replace('DummyTemplate', $name, $stub);
+        return str_replace('DummyTemplate', Str::studly($name), $stub);
     }
 
     public function getStub()
