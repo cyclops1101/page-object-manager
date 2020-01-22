@@ -62,7 +62,8 @@ class CreateTemplate extends Command
         } else {
             $this->files->put($path, $this->buildClass($name));
             DB::table('static_pages')->insert([
-                'name' => $name
+                'name' => $name,
+                'type' => $this->option('block') ? 'page' : 'block'
             ]);
             $this->info('Created ' . $path);
         }
