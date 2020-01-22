@@ -27,6 +27,13 @@ In order to create a template run the following command
 php artisan make:template "About Us"
 ```
 
+Register your pages and blocks in the page-object config
+```$xslt
+'pages' => [
+    'About Us' => App\Nova\Templates\AboutUs::class
+]
+```
+
 Page and Block objects use any Nova Field you have installed.
 
 Load your page/block in your controller using the name you set in the Nova admin and then you have access to all the data you've stored on the object
