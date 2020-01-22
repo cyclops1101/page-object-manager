@@ -5,7 +5,8 @@ namespace Cyclops1101\PageObjectManager\Commands;
 use Illuminate\Config\Repository;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Support\DB;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Str;
 use Illuminate\Support\Facades\Config;
 
 class CreateTemplate extends Command
@@ -50,7 +51,7 @@ class CreateTemplate extends Command
     public function handle()
     {
         $name = ucwords($this->getNameArgument());
-        $path = $this->getPath($name);
+        $path = $this->getPath(Str::studly($name));
 
         // Make directory if it does not exist
         $this->makeDirectory($path);
