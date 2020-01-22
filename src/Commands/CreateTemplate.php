@@ -51,7 +51,7 @@ class CreateTemplate extends Command
     public function handle()
     {
         $name = ucwords($this->getNameArgument());
-        $path = $this->getPath(Str::studly($name));
+        $path = $this->getPath($name);
 
         // Make directory if it does not exist
         $this->makeDirectory($path);
@@ -61,11 +61,6 @@ class CreateTemplate extends Command
             $this->info($path . ' template already exists');
         } else {
             $this->files->put($path, $this->buildClass($name));
-            DB::table('static_pages')->insert([
-                'name' => $name,
-                'type' => $this->option('block') ? 'page' : 'block',
-                'attributes' => json_encode([])
-            ]);
             $this->info('Created ' . $path);
         }
     }
@@ -99,7 +94,7 @@ class CreateTemplate extends Command
         if ($this->option('block')) {
             $stub = str_replace("'page'", "'block'", $stub);
         }
-        return str_replace('DummyTemplate', Str::studly($name), $stub);
+        return str_replace('DummyTemplate', $name, $stub);
     }
 
     public function getStub()
