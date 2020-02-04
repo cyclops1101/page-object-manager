@@ -61,11 +61,6 @@ class BlockResource extends StaticResource
             Text::make('Name', function () {
                 return $this->getFormattedName();
             })->sortable(),
-
-            DateTime::make('Last updated on', function () {
-                $updated_at = $this->getDate('updated_at');
-                return $updated_at ? $updated_at->toDateTimeString() : null;
-            })->format(config('page-object-manager.date_format'))->sortable(),
         ];
     }
 

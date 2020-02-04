@@ -60,10 +60,6 @@ class PageResource extends StaticResource
         return [
             Text::make('Page title', 'nova_page_title')
                 ->rules(['required', 'string', 'max:255']),
-
-            DateTime::make('Page creation date', 'nova_page_created_at')
-                ->format(config('page-object-manager.date_format'))
-                ->rules(['required', 'string', 'max:255']),
         ];
     }
 
