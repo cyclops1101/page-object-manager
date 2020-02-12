@@ -10,13 +10,14 @@ use BadMethodCallException;
 use Cyclops1101\PageObjectManager\Sources\SourceInterface;
 use Cyclops1101\PageObjectManager\Exceptions\ValueNotFoundException;
 use Cyclops1101\PageObjectManager\Exceptions\TemplateContentNotFoundException;
+use Illuminate\Database\Eloquent\Concerns\HasRelationships;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Concerns\HasAttributes;
 
 abstract class Template implements ArrayAccess
 {
-    use HasAttributes;
-    use Concerns\HasJsonAttributes;
+    use HasAttributes,
+        Concerns\HasJsonAttributes;
 
     /**
      * The page name
@@ -209,16 +210,6 @@ abstract class Template implements ArrayAccess
     public function getType()
     {
         return $this->type;
-    }
-
-    /**
-     * Retrieve the compound page type.name
-     *
-     * @return string
-     */
-    public function getKey()
-    {
-        return $this->key;
     }
 
     /**

@@ -96,11 +96,12 @@ class Manager
      * @param bool $throwOnMissing
      * @return mixed
      * @throws TemplateNotFoundException
+     * @throws TemplateContentNotFoundException
      */
     public function block($name, $throwOnMissing = false)
     {
-        return  $this->find($name, 'block') ??
-                $this->load($name, 'block', false, $throwOnMissing);
+        return $this->find($name, 'block') ??
+            $this->load($name, 'block', false, $throwOnMissing);
     }
 
     /**
@@ -111,7 +112,7 @@ class Manager
      */
     public function __get($attribute)
     {
-        if(!$this->current) {
+        if (!$this->current) {
             return;
         }
 
@@ -127,7 +128,7 @@ class Manager
      */
     public function __call($method, $arguments)
     {
-        if(!$this->current) {
+        if (!$this->current) {
             return;
         }
 
@@ -152,5 +153,4 @@ class Manager
     {
         return $this->repository;
     }
-
 }
